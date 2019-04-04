@@ -2,7 +2,7 @@
 *Files to look at*:
 
 * [MainWindow.xaml](./CS/DXPivotGrid_SelectingCellTemplate/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/DXPivotGrid_SelectingCellTemplate/MainWindow.xaml))
-* [MainWindow.xaml.cs](./CS/DXPivotGrid_SelectingCellTemplate/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/DXPivotGrid_SelectingCellTemplate/MainWindow.xaml))
+* [MainWindow.xaml.cs](./CS/DXPivotGrid_SelectingCellTemplate/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/DXPivotGrid_SelectingCellTemplate/MainWindow.xaml.vb))
 <!-- default file list end -->
 # How to select the cell template based on custom logic
 
