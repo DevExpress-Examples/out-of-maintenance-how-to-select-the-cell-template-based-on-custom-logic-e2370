@@ -7,7 +7,7 @@ using System.Windows.Markup;
 using DevExpress.Xpf.PivotGrid.Internal;
 
 namespace DXPivotGrid_SelectingCellTemplate {
-    public partial class MainWindow : Window {
+    public partial class MainWindow : Window { 
         public MainWindow() {
             InitializeComponent();
             picotGridControl1.DataSource =
