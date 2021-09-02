@@ -20,7 +20,7 @@ Namespace DXPivotGrid_SelectingCellTemplate
 
 		Public Overrides Function SelectTemplate(ByVal item As Object, ByVal container As DependencyObject) As DataTemplate
 'INSTANT VB NOTE: The variable mainWindow was renamed since it may cause conflicts with calls to static members of the user-defined type with this name:
-			Dim mainWindow_Renamed As Window = Application.Current.MainWindow
+			Dim mainWindow_Conflict As Window = Application.Current.MainWindow
 			Dim cell As CellsAreaItem = DirectCast(item, CellsAreaItem)
 
 			' Calculates the share of a cell value in the Row Grand Total value.
@@ -28,15 +28,15 @@ Namespace DXPivotGrid_SelectingCellTemplate
 
 			' Applies the Default template to the Row Grand Total cells.
 			If cell.RowValue Is Nothing Then
-				Return TryCast(mainWindow_Renamed.FindResource("DefaultCellTemplate"), DataTemplate)
+				Return TryCast(mainWindow_Conflict.FindResource("DefaultCellTemplate"), DataTemplate)
 			End If
 
 			' If the share is too far from 50%, the Highlighted template is selected.
 			' Otherwise, the Normal template is applied to the cell.
 			If share > 0.7 OrElse share < 0.3 Then
-				Return TryCast(mainWindow_Renamed.FindResource("HighlightedCellTemplate"), DataTemplate)
+				Return TryCast(mainWindow_Conflict.FindResource("HighlightedCellTemplate"), DataTemplate)
 			Else
-				Return TryCast(mainWindow_Renamed.FindResource("NormalCellTemplate"), DataTemplate)
+				Return TryCast(mainWindow_Conflict.FindResource("NormalCellTemplate"), DataTemplate)
 			End If
 		End Function
 	End Class
