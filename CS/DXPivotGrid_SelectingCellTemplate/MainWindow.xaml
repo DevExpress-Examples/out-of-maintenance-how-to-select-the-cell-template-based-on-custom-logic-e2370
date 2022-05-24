@@ -24,14 +24,28 @@
         </DataTemplate>
     </Window.Resources>
     <Grid>
-        <dxpg:PivotGridControl x:Name="picotGridControl1" FieldCellTemplate="{x:Null}">
+        <dxpg:PivotGridControl x:Name="picotGridControl1" FieldCellTemplate="{x:Null}" DataProcessingEngine="Optimized">
             <dxpg:PivotGridControl.Fields>
-                <dxpg:PivotGridField Name="fieldCountry" FieldName="Country" Area="RowArea"/>
-                <dxpg:PivotGridField Name="fieldYear" FieldName="OrderDate" Area="ColumnArea"
-                                     Caption="Year" GroupInterval="DateYear"/>
-                <dxpg:PivotGridField Name="fieldMonth" FieldName="OrderDate" Area="ColumnArea"
-                                     Caption="Month" GroupInterval="DateMonth"/>
-                <dxpg:PivotGridField Name="fieldQuantity" FieldName="Quantity" Area="DataArea"/>
+                <dxpg:PivotGridField Name="fieldCountry" Area="RowArea">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="Country"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField Name="fieldYear" Area="ColumnArea" Caption="Year">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="OrderDate" GroupInterval="DateYear"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField Name="fieldMonth" Area="ColumnArea" Caption="Month">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="OrderDate" GroupInterval="DateMonth"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField Name="fieldQuantity" Area="DataArea">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="Quantity"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
             </dxpg:PivotGridControl.Fields>
             <dxpg:PivotGridControl.FieldCellTemplateSelector>
                 <local:CellTemplateSelector/>
